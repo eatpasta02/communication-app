@@ -6,6 +6,7 @@
 -Wyświetla historię komunikacji przechowywaną bazie danych.
 -Symuluje odpowiedzi Krzysia – po każdej wiadomości użytkownika odpisuje losową odpowiedź.
 
+
 --Technologie
 
 -Frontend: React.js
@@ -19,7 +20,7 @@
 --Uruchomienie
 
 wymagane:
--Docker i Docker Compose
+-zainstalowanie i włączenie Docker i Docker Compose
 
 
 ->Sklonuj repozytorium:

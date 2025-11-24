@@ -76,11 +76,6 @@ def update_status():
 @app.get("/messages")
 def get_messages():
     return fetch_messages_from_db()
-    # return ([
-    #     {"author": "Ziemia", "text": msg}
-    #     for msg in messages
-    # ])
-
 
 
 @app.post("/messages")
