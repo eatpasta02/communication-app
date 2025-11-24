@@ -25,7 +25,7 @@ wymagane:
 ->Sklonuj repozytorium:
 
 ```bash
-git clone https://github.com/eatpasta02/communicatio-app.git
+git clone https://github.com/eatpasta02/communication-app.git
 cd communication-app
 docker compose up --build
 ```
