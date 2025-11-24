@@ -1,0 +1,17 @@
+
+services:
+  backend:
+    build: ./flask-server
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./flask-server:/app
+    environment:
+      - FLASK_ENV=development
+
+  frontend:
+    build: ./client
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./client:/app

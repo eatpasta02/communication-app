@@ -23,14 +23,33 @@ function App() {
     load();
   }
 
+  function updateStatus(key, value) {
+    setStatus(prev => {
+      const newStatus = { ...prev, [key]: value };
+
+      newStatus.mood = calculateMood(newStatus);
+
+      return newStatus;
+  });
+}
+
+function calculateMood(s) {
+  if (s.energy > 70 && s.temperature < 38) return "happy";
+  if (s.energy < 40) return "tired";
+  if (s.temperature > 39) return "tired";
+  if (s.heartbeat > 140) return "confused";
+  return "fine";
+}
+
   return(
     <Home
-      status={status}
-      messages={messages}
-      text={text}
-      setText={setText}
-      handleSend={handleSend}
-    />
+    status={status}
+    updateStatus={updateStatus}
+    messages={messages}
+    text={text}
+    setText={setText}
+    handleSend={handleSend}
+  />
   )
   
 }
