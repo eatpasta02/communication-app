@@ -1,11 +1,10 @@
 
---Co robi system?
+--Co robi?
 
 -Wyświetla status Krzysia: poziom energii, tętno, temperaturę i nastrój.
--Możliwość wysyłania wiadomości do Krzysia przez pole tekstowe.
--Historia komunikacji przechowywana w SQLite.
--Symulacja odpowiedzi Krzysia – po każdej wiadomości użytkownika ufoludek odpisuje losową odpowiedź.
-- Konteneryzacja całej aplikacji w Dockerze.
+-Umożliwia wysyłanie wiadomości do Krzysia przez pole tekstowe.
+-Wyświetla historię komunikacji przechowywaną bazie danych.
+-Symuluje odpowiedzi Krzysia – po każdej wiadomości użytkownika odpisuje losową odpowiedź.
 
 --Technologie
 
@@ -13,15 +12,17 @@
 -Backend: Python, Flask
 -Baza danych: SQLite
 -Konteneryzacja: Docker, Docker Compose
--Inne: CORS, randomowe odpowiedzi ufoludka
+-Inne: CORS
+
+
 
 --Uruchomienie
 
 wymagane:
 -Docker i Docker Compose
 
-Potem:
-Sklonuj repozytorium:
+
+->Sklonuj repozytorium:
 
 ```bash
 git clone https://github.com/eatpasta02/communicatio-app.git
@@ -29,7 +30,7 @@ cd communication-app
 docker compose up --build
 ```
 
-Alternatywnie (lokalnie bez Dockera)
+->Alternatywnie (lokalnie bez Dockera)
 
 Backend:
 

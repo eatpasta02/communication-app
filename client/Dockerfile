@@ -1,14 +1,15 @@
-FROM node:22
+FROM node:18 AS build
 
-WORKDIR /communication_app
-
+WORKDIR /app
 COPY package*.json ./
-
 RUN npm install
-
 COPY . .
+RUN npm run build
 
-ENV PORT=3000
+# Production stage
+FROM node:18-alpine
+WORKDIR /app
+RUN npm install -g serve
+COPY --from=build /app/build ./build
 EXPOSE 3000
-
-CMD ["npm", "start"]
+CMD ["serve", "-s", "build", "-l", "3000"]

@@ -2,13 +2,12 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import sqlite3
 import random
-from init_db import init_db
+import sqlite3
 
 
 app = Flask(__name__)
 CORS(app, resources={"*": {"origins": "*"}})
 
-init_db()
 
 messages = []
 
@@ -30,6 +29,27 @@ alien_responses = [
     "Please provide more data for analysis.",
 ]
 
+
+DATABASE = "database.db"
+
+def init_db():
+    conn = sqlite3.connect(DATABASE)
+    cursor = conn.cursor()
+
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS messages (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            author TEXT NOT NULL,
+            text TEXT NOT NULL
+        )
+    ''')
+
+    conn.commit()
+    conn.close()
+
+    print("Database and 'messages' table created")
+
+init_db()
 
 def fetch_messages_from_db():
     conn = sqlite3.connect('database.db')
@@ -81,7 +101,7 @@ def post_message():
 
 
 if __name__ == "__main__":
-    app.run(port = 5000, debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)
 
 
     
