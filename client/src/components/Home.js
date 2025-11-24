@@ -1,3 +1,4 @@
+
 export default function Home({ status,updateStatus, messages, text, setText, handleSend }) {
     return (
         <div className="container py-5">
@@ -10,12 +11,12 @@ export default function Home({ status,updateStatus, messages, text, setText, han
                 <div className="card h-100">
                     <div className="card-header fw-bold text-center">Krzysiu</div>
                     <div className="card-body text-center">
-                        <img 
-                        src={`${status.mood}.jpg`}
-                        className="img-fluid rounded-circle shadow mb-3"
-                        style={{ width: "150px", height: "150px", objectFit: "cover" }}
-                        alt="Krzysiu"
-                        />
+                        <img
+                            src={`${status.mood}.jpg`}
+                            className="img-fluid rounded-circle shadow mb-3"
+                            style={{ width: "150px", height: "150px", objectFit: "cover" }}
+                            alt="Krzysiu"
+                            />
                         <p className="text-muted">Mood: {status.mood}</p>
                     </div>
                 </div>

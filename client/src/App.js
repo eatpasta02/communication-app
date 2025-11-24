@@ -20,7 +20,7 @@ function App() {
     if (!text.trim()) return;
     await sendMessage(text);
     setText("");
-    load();
+    setMessages(await getMessages());
   }
 
   function updateStatus(key, value) {
